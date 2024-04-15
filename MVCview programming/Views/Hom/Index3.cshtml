@@ -1,0 +1,49 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index3</title>
+</head>
+<body>
+    <div>
+        <h1>Razor Programming Example-4</h1>
+        <hr />
+        <h3>Login Page</h3>
+        <form action="" method="post">
+            <label>Enter username:</label>
+            <input type="text" name="username" />
+            <br />
+            <label>Enter Password:</label>
+            <input type="text" name="password" />
+            <br />
+
+            <input type="submit" name="submit" value="Login" />
+        </form>
+    </div>
+    @{
+        if (IsPost)
+        {
+            var logins = new[]
+            {
+                new {Username="sri@gmail.com",Password="sri@123"},
+                new {Username="pra@gmail.com",Password="pra@123"},
+                new {Username="raju@gmail.com",Password="raju@123"},
+                new {Username="scott@gmail.com",Password="scott@123"},
+                new {Username="vani@gmail.com",Password="vani@123"}
+            };
+            string username = Request["username"];
+            string password = Request["password"];
+            if(username == "admin@gmail.com" && password == "admin@123")
+            {
+                    <h4 style="color:green;">Login Success</h4>
+            }
+            else
+            {
+                    <h4 style="color:red;">Login Failed</h4>
+            }
+        }
+    }
+</body>
+</html>
