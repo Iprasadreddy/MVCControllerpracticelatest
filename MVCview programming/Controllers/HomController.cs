@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
+using System.Web.UI.WebControls;
 
 namespace MVCview_programming.Controllers
 {
@@ -23,6 +25,13 @@ namespace MVCview_programming.Controllers
         }
         public ActionResult Index4()
         {
+            return View();
+        }
+        public ActionResult Index5()
+        {
+            List<string> list = new List<string>() { "Admin", "Trainer", "HR", "Student" };
+            SelectList items = new SelectList(list);
+            ViewData["logins"] = items;
             return View();
         }
     }
